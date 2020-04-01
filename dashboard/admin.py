@@ -89,9 +89,9 @@ class RouteForm(forms.ModelForm):
 
 @admin.register(Route)
 class RouteAdmin(admin.ModelAdmin):
-    change_form_template = "admin/dashboard/change_form.html"
     list_display = ('title', )
     exclude = ('route_x', 'route_y',)
+    change_form_template = "admin/dashboard/route_form.html"
     readonly_fields = ('add_x_coordinate', 'add_y_coordinate', 'display_route_x', 'display_route_y',)
     form = RouteForm
     model = Route
