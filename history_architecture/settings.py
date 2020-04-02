@@ -116,8 +116,8 @@ DATABASES = {
 #         'NAME': 'history_architecture',
 #         'USER': 'jth3kdmvnfh45k',
 #         'PASSWORD': 'b75dbb876bb46567de6a7fb9d8',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'HOST': 'ubuntu-s-1vcpu-1gb-fra1-01',
+#         'PORT': '5432',
 #     }
 # }
 
@@ -161,7 +161,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
