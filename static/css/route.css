@@ -1,4 +1,4 @@
-#add_x_coordinate, #add_y_coordinate {
+#add_x_coordinate, #add_highlight_x, #add_map_x, #add_y_coordinate, #add_highlight_y, #add_map_y {
     margin-left: 5px!important;
     padding: 7px 8px!important;
 }
