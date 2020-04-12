@@ -1,8 +1,21 @@
 from django.contrib import admin
 from django import forms
 from django.utils.html import format_html
+from django.contrib.admin import SimpleListFilter
 
 from .models import Map, Sections, Layers, Articles, Price, Museums, Route, GeneralMap, Language, Gallery
+
+
+class ArticlesFilter(SimpleListFilter):
+    title = 'language'
+    parameter_name = 'language'
+
+    def lookups(self, request, model_admin):
+        languages = Language.objects.all()
+        return set([(x.id, x.title) for x in languages])
+
+    def queryset(self, request, queryset):
+        return queryset
 
 
 class ReservationInlineAdmin(admin.TabularInline):
@@ -28,6 +41,9 @@ class LayersAdmin(admin.ModelAdmin):
 
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
+    list_filter = (
+        ArticlesFilter,
+    )
     list_display = ('title', 'map', 'type', 'language')
     inlines = [ReservationInlineAdmin]
 

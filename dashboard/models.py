@@ -77,12 +77,13 @@ ARTICLE_TYPE = (
 
 class Articles(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    map = models.ForeignKey(Map, on_delete=models.CASCADE, null=True)
+    map = models.ForeignKey(Map, on_delete=models.CASCADE, null=True, related_name='articles')
     layers = models.ManyToManyField(Layers, blank=True, related_name='articles')
     section = models.ManyToManyField(Sections, blank=True, related_name='articles')
-    language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True, related_name='articles')
     type = models.CharField(max_length=30, choices=ARTICLE_TYPE)
     main_picture = models.ImageField(upload_to='media/main_pictures/', null=True)
+    brief_description = models.TextField()
     full_description = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     audio_text = AudioField(upload_to='media/audio/', blank=True,
@@ -116,13 +117,14 @@ class Museums(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     tickets = models.CharField(max_length=200)
-    price = models.ForeignKey(Price, on_delete=models.CASCADE, null=True)
-    map = models.ForeignKey(Map, on_delete=models.CASCADE, null=True)
+    price = models.ForeignKey(Price, on_delete=models.CASCADE, null=True, related_name='museums')
+    map = models.ForeignKey(Map, on_delete=models.CASCADE, null=True, related_name='museums')
     layers = models.ManyToManyField(Layers, blank=True, related_name='museums')
     section = models.ManyToManyField(Sections, blank=True, related_name='museums')
-    language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True, related_name='museums')
     type = models.CharField(max_length=30, choices=ARTICLE_TYPE)
     main_picture = models.ImageField(upload_to='media/main_pictures/', null=True)
+    brief_description = models.TextField()
     full_description = models.TextField(null=True)
     audio_text = AudioField(upload_to='media/audio/', blank=True,
                             ext_whitelist=(".mp3", ".wav", ".ogg"),
@@ -154,6 +156,6 @@ class Route(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(upload_to='media/gallery/')
     brief_description = models.TextField()
-    articles = models.ForeignKey(Articles, on_delete=models.CASCADE, null=True)
-    museums = models.ForeignKey(Museums, on_delete=models.CASCADE, null=True)
+    articles = models.ForeignKey(Articles, on_delete=models.CASCADE, null=True, related_name='gallery')
+    museums = models.ForeignKey(Museums, on_delete=models.CASCADE, null=True, related_name='gallery')
 
