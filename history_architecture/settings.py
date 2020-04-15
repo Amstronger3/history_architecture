@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'application_settings',
     'audiofield',
     'rest_framework',
+    'drf_yasg',
 ]
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
