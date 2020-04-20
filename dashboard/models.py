@@ -17,8 +17,8 @@ class Map(models.Model):
     title = models.CharField(max_length=200, unique=True)
     highlight_x = models.CharField(max_length=200)
     highlight_y = models.CharField(max_length=200)
-    pin_x = models.IntegerField(default=0)
-    pin_y = models.IntegerField(default=0)
+    pin_x = models.FloatField(default=0)
+    pin_y = models.FloatField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -31,8 +31,8 @@ class Map(models.Model):
 
 class GeneralMap(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    map_x = models.CharField(max_length=200)
-    map_y = models.CharField(max_length=200)
+    map_x = models.FloatField(max_length=200)
+    map_y = models.FloatField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
