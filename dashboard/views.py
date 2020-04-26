@@ -36,11 +36,11 @@ class AllArticles(GenericAPIView):
                 result = {'message': 'Section doesnt exist'}
                 return Response(result, status=status.HTTP_400_BAD_REQUEST)
             try:
-                layer = Layers.objects.all() if layer_id == 'all' else Layers.objects.get(id=layer_id)
+                layer = Layers.objects.all().values_list('id') if layer_id == 'all' else Layers.objects.get(id=layer_id)
             except Layers.DoesNotExist:
                 result = {'message': 'Layer doesnt exist'}
                 return Response(result, status=status.HTTP_400_BAD_REQUEST)
-            articles = Articles.objects.filter(section=section, layers=layer)
+            articles = Articles.objects.filter(section=section, layers__in=[layer])
         else:
             if section_id:
                 try:
@@ -51,8 +51,8 @@ class AllArticles(GenericAPIView):
                     return Response(result, status=status.HTTP_400_BAD_REQUEST)
             elif layer_id:
                 try:
-                    layer = Layers.objects.all() if layer_id == 'all' else Layers.objects.get(id=layer_id)
-                    articles = Articles.objects.filter(layers=layer)
+                    layer = Layers.objects.all().values_list('id') if layer_id == 'all' else Layers.objects.get(id=layer_id)
+                    articles = Articles.objects.filter(layers__in=[layer])
                 except Layers.DoesNotExist:
                     result = {'message': 'Layer doesnt exist'}
                     return Response(result, status=status.HTTP_400_BAD_REQUEST)
