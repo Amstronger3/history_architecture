@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import AllArticles, AllMaps, GetArticle, AllLayers, AllMuseums, GetMuseum, AllContent
+from .views import AllArticles, AllMaps, GetArticle, AllLayers, AllMuseums, GetMuseum, AllContent, AllGeneralMaps
 
 urlpatterns = [
     url(r'^all_articles/$', AllArticles.as_view()),

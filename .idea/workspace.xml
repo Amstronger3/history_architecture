@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99c3b7de-a7fa-4ac1-98f0-dd791b684b45" name="Default Changelist" comment="(add) project database settings">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0006_auto_20200404_1653.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0007_generalmap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0008_auto_20200406_2156.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0009_auto_20200406_2201.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0010_auto_20200406_2345.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/dashboard/general_map_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/dashboard/map_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/translation.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/history_architecture/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/history_architecture/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/route.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/route.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +38,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -170,7 +156,25 @@
       <workItem from="1585952023867" duration="3807000" />
       <workItem from="1586003490276" duration="15175000" />
       <workItem from="1586108162489" duration="1222000" />
-      <workItem from="1586189945193" duration="10458000" />
+      <workItem from="1586189945193" duration="12818000" />
+      <workItem from="1586444338599" duration="4948000" />
+      <workItem from="1586528365480" duration="2597000" />
+      <workItem from="1586533009186" duration="5845000" />
+      <workItem from="1586560646891" duration="426000" />
+      <workItem from="1586589800666" duration="28684000" />
+      <workItem from="1586708308870" duration="14565000" />
+      <workItem from="1586780034783" duration="12757000" />
+      <workItem from="1586965876305" duration="1579000" />
+      <workItem from="1587422360759" duration="959000" />
+      <workItem from="1587423334132" duration="639000" />
+      <workItem from="1587494456640" duration="35000" />
+      <workItem from="1587495960116" duration="40000" />
+      <workItem from="1587740705219" duration="178000" />
+      <workItem from="1587910903123" duration="4168000" />
+      <workItem from="1587915612336" duration="1126000" />
+      <workItem from="1588091749358" duration="85000" />
+      <workItem from="1588266023699" duration="31000" />
+      <workItem from="1588266136779" duration="1057000" />
     </task>
     <task id="LOCAL-00001" summary="(add) project database settings">
       <created>1585599839535</created>
@@ -200,7 +204,63 @@
       <option name="project" value="LOCAL" />
       <updated>1585867370283</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="(add) model Map&#10;(upd) Multiple highlight points for map model&#10;(add) model General Map, that is similar to Route&#10;(add) Gallery model for Articles and Museums&#10;(upd) Museums have to be such as Articles, but with additional fields&#10;(add) Language model for Articles and Museums full description">
+      <created>1586208478706</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586208478706</updated>
+    </task>
+    <task id="LOCAL-00006" summary="(add) articles filtering by language&#10;(add) application settings app&#10;(add) all content request">
+      <created>1586735788550</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586735788550</updated>
+    </task>
+    <task id="LOCAL-00007" summary="(add) project api swagger">
+      <created>1586966880280</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586966880280</updated>
+    </task>
+    <task id="LOCAL-00008" summary="(upd) replace integer map fields on float">
+      <created>1587422506170</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587422506170</updated>
+    </task>
+    <task id="LOCAL-00009" summary="(upd) all layer value for all articles request">
+      <created>1587914650508</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587914650508</updated>
+    </task>
+    <task id="LOCAL-00010" summary="(upd) all articles filter by all layers fixing">
+      <created>1587916260853</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587916260853</updated>
+    </task>
+    <task id="LOCAL-00011" summary="(upd) all articles by all layers fixing">
+      <created>1587916420842</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587916420842</updated>
+    </task>
+    <task id="LOCAL-00012" summary="(add) all general maps request">
+      <created>1588267109323</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588267109323</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +284,15 @@
     <MESSAGE value="(upd) show remove coordinates only for route menu fixing" />
     <MESSAGE value="(upd) allow all hosts in settings" />
     <MESSAGE value="(upd) static files path" />
-    <option name="LAST_COMMIT_MESSAGE" value="(upd) static files path" />
+    <MESSAGE value="(add) model Map&#10;(upd) Multiple highlight points for map model&#10;(add) model General Map, that is similar to Route&#10;(add) Gallery model for Articles and Museums&#10;(upd) Museums have to be such as Articles, but with additional fields&#10;(add) Language model for Articles and Museums full description" />
+    <MESSAGE value="(add) articles filtering by language&#10;(add) application settings app&#10;(add) all content request" />
+    <MESSAGE value="(add) project api swagger" />
+    <MESSAGE value="(upd) replace integer map fields on float" />
+    <MESSAGE value="(upd) all layer value for all articles request" />
+    <MESSAGE value="(upd) all articles filter by all layers fixing" />
+    <MESSAGE value="(upd) all articles by all layers fixing" />
+    <MESSAGE value="(add) all general maps request" />
+    <option name="LAST_COMMIT_MESSAGE" value="(add) all general maps request" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584910916140">
@@ -235,45 +303,53 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585321341134" />
-    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1586206232708">
+    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1588267108716">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586206232708" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1586016687666">
+    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588267108716" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1586208483465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1586016687666" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1586016686702">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1586208483465" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1587495980787">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586016686702" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587495980787" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1584910904490">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1584910904490" />
-    <state x="277" y="56" key="SettingsEditor" timestamp="1584662769337">
+    <state x="277" y="56" key="SettingsEditor" timestamp="1587915630387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584662769337" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1585867371637">
+    <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587915630387" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1588267110604">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585867371637" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586009186392">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588267110604" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586782964707">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1586009186392" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1586189944869">
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1586782964707" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1588091826670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586189944869" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588091826670" />
     <state x="406" y="28" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586008396280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="406" y="28" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1586008396280" />
-    <state x="658" y="85" width="611" height="536" key="find.popup" timestamp="1586013691554">
+    <state x="658" y="85" width="611" height="536" key="find.popup" timestamp="1586810229264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="658" y="85" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586013691554" />
+    <state x="658" y="85" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586810229264" />
+    <state x="557" y="13" key="scopes" timestamp="1586209527330">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="557" y="13" key="scopes/0.0.1536.824@0.0.1536.824" timestamp="1586209527330" />
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup" timestamp="1586735484095">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586735484095" />
   </component>
 </project>
