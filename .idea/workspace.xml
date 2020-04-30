@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99c3b7de-a7fa-4ac1-98f0-dd791b684b45" name="Default Changelist" comment="(add) project database settings">
+    <list default="true" id="99c3b7de-a7fa-4ac1-98f0-dd791b684b45" name="Default Changelist" comment="(upd) all general maps request fixing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/serializers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,7 @@
       <workItem from="1587915612336" duration="1126000" />
       <workItem from="1588091749358" duration="85000" />
       <workItem from="1588266023699" duration="31000" />
-      <workItem from="1588266136779" duration="1057000" />
+      <workItem from="1588266136779" duration="1757000" />
     </task>
     <task id="LOCAL-00001" summary="(add) project database settings">
       <created>1585599839535</created>
@@ -260,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588267109323</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="(upd) all general maps request fixing">
+      <created>1588267238954</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588267238954</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +299,8 @@
     <MESSAGE value="(upd) all articles filter by all layers fixing" />
     <MESSAGE value="(upd) all articles by all layers fixing" />
     <MESSAGE value="(add) all general maps request" />
-    <option name="LAST_COMMIT_MESSAGE" value="(add) all general maps request" />
+    <MESSAGE value="(upd) all general maps request fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="(upd) all general maps request fixing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584910916140">
@@ -303,14 +311,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585321341134" />
-    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1588267108716">
+    <state x="393" y="8" key="CommitChangelistDialog2" timestamp="1588267766576">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588267108716" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1586208483465">
+    <state x="393" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588267766576" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1588267251316">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1586208483465" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1588267251316" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1587495980787">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -323,10 +331,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587915630387" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1588267110604">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1588267252018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588267110604" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588267252018" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586782964707">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

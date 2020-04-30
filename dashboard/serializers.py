@@ -10,10 +10,18 @@ class LanguageSerializer(serializers.ModelSerializer):
 
 
 class GeneralMapSerializer(serializers.ModelSerializer):
+    general_map_x = serializers.SerializerMethodField('general_map_xFunc')
+    general_map_y = serializers.SerializerMethodField('general_map_yFunc')
+
+    def general_map_xFunc(self, obj):
+        return [x.strip() for x in obj.map_x.split(',')]
+
+    def general_map_yFunc(self, obj):
+        return [y.strip() for y in obj.map_y.split(',')]
 
     class Meta:
         model = GeneralMap
-        fields = ('id', 'title', 'map_x', 'map_y')
+        fields = ('id', 'title', 'general_map_x', 'general_map_y')
 
 
 class SectionsSerializer(serializers.ModelSerializer):
