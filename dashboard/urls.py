@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^get_article/$', GetArticle.as_view()),
     url(r'^get_museum/$', GetMuseum.as_view()),
     url(r'^all_content/$', AllContent.as_view()),
+    url(r'^all_general_maps/$', AllGeneralMaps.as_view()),
 ]

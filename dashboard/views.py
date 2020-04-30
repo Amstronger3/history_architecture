@@ -239,3 +239,26 @@ class AllContent(GenericAPIView):
         return Response({'languages': languages, 'maps': maps, 'general_maps': general_maps, 'sections': sections,
                          'layers': layers, 'articles': articles, 'prices': prices, 'museums': museums, 'routes': routes,
                          'gallery': gallery}, status=status.HTTP_200_OK)
+
+
+class AllGeneralMaps(GenericAPIView):
+    serializer_class = GeneralMapSerializer
+
+    def get(self, request):
+        """
+        Get all general maps
+        ---
+        Request header(body):
+            - name: Authorization
+            - value: Token xxxxxxxxxxxxxxxxxx
+
+        Response parameters(String):
+                - 'success' -- success
+                - 'fail' -- fail
+
+            Response status(int):
+                - 200 - success, articles objects
+        """
+        generals_maps = GeneralMap.objects.all()
+        serializer = self.serializer_class(generals_maps, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
