@@ -262,3 +262,26 @@ class AllGeneralMaps(GenericAPIView):
         generals_maps = GeneralMap.objects.all()
         serializer = self.serializer_class(generals_maps, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class AllRoutes(GenericAPIView):
+    serializer_class = RouteSerializer
+
+    def get(self, request):
+        """
+        Get all routes objects
+        ---
+        Request header(body):
+            - name: Authorization
+            - value: Token xxxxxxxxxxxxxxxxxx
+
+        Response parameters(String):
+                - 'success' -- success
+                - 'fail' -- fail
+
+            Response status(int):
+                - 200 - success, articles objects
+        """
+        routes = Route.objects.all()
+        serializer = self.serializer_class(routes, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
