@@ -61,10 +61,10 @@ class MuseumsAdmin(admin.ModelAdmin):
 
 class RouteWidget(forms.MultiWidget):
     def __init__(self, attrs=None):
-        widgets = [forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                   forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                   forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                   forms.FloatField(), forms.FloatField(),
+        widgets = [forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                   forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                   forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                   forms.CharField(), forms.CharField(),
                    ]
         super(RouteWidget, self).__init__(widgets, attrs)
 
@@ -77,10 +77,10 @@ class RouteWidget(forms.MultiWidget):
 
 class XRouteField(forms.MultiValueField):
     def __init__(self, *args, **kwargs):
-        list_fields = [forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                       forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                       forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                       forms.FloatField(), forms.FloatField(),
+        list_fields = [forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                       forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                       forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                       forms.CharField(), forms.CharField(),
                        ]
         super(XRouteField, self).__init__(list_fields, widget=RouteWidget(), required=False, *args, **kwargs)
 
@@ -90,10 +90,10 @@ class XRouteField(forms.MultiValueField):
 
 class YRouteField(forms.MultiValueField):
     def __init__(self, *args, **kwargs):
-        list_fields = [forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                       forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                       forms.FloatField(), forms.FloatField(), forms.FloatField(), forms.FloatField(),
-                       forms.FloatField(), forms.FloatField(),
+        list_fields = [forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                       forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                       forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
+                       forms.CharField(), forms.CharField(),
                        ]
         super(YRouteField, self).__init__(list_fields, widget=RouteWidget(), required=False, *args, **kwargs)
 
