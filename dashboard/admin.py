@@ -44,7 +44,7 @@ class ArticlesAdmin(admin.ModelAdmin):
     list_filter = (
         ArticlesFilter,
     )
-    list_display = ('title', 'map', 'type', 'language')
+    list_display = ('title', 'map', 'type', 'language', 'sequence')
     inlines = [ReservationInlineAdmin]
 
 
@@ -55,7 +55,7 @@ class PriceAdmin(admin.ModelAdmin):
 
 @admin.register(Museums)
 class MuseumsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'map', 'type', 'language', 'website', 'start_time', 'end_time', 'tickets', 'price')
+    list_display = ('title', 'map', 'type', 'language', 'website', 'start_time', 'end_time', 'tickets', 'price', 'sequence')
     inlines = [ReservationInlineAdmin]
 
 

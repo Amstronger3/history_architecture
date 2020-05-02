@@ -69,9 +69,11 @@ class Layers(models.Model):
 
 ARTICLE_TYPE_MONUMENT = 'monument'
 ARTICLE_TYPE_MUSEUM = 'museum'
+ARTICLE_TYPE_SMALL_OBJECTS = 'small_objects'
 ARTICLE_TYPE = (
     (ARTICLE_TYPE_MONUMENT, 'monument'),
-    (ARTICLE_TYPE_MUSEUM, 'museum')
+    (ARTICLE_TYPE_MUSEUM, 'museum'),
+    (ARTICLE_TYPE_SMALL_OBJECTS, 'small_objects')
 )
 
 
@@ -83,7 +85,8 @@ class Articles(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True, related_name='articles')
     type = models.CharField(max_length=30, choices=ARTICLE_TYPE)
     main_picture = models.ImageField(upload_to='media/main_pictures/', null=True)
-    brief_description = models.TextField()
+    sequence = models.FloatField()
+    brief_description = models.TextField(null=True)
     full_description = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     audio_text = AudioField(upload_to='media/audio/', blank=True,
@@ -124,7 +127,8 @@ class Museums(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True, related_name='museums')
     type = models.CharField(max_length=30, choices=ARTICLE_TYPE)
     main_picture = models.ImageField(upload_to='media/main_pictures/', null=True)
-    brief_description = models.TextField()
+    sequence = models.FloatField()
+    brief_description = models.TextField(null=True)
     full_description = models.TextField(null=True)
     audio_text = AudioField(upload_to='media/audio/', blank=True,
                             ext_whitelist=(".mp3", ".wav", ".ogg"),
