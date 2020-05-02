@@ -85,7 +85,10 @@ class XRouteField(forms.MultiValueField):
         super(XRouteField, self).__init__(list_fields, widget=RouteWidget(), required=False, *args, **kwargs)
 
     def compress(self, values):
-        return ' '.join(values)
+        if values:
+            return ' '.join(values)
+        else:
+            return ['', '', '', '', '', '', '', '', '', '', '', '', '', '']
 
 
 class YRouteField(forms.MultiValueField):
@@ -98,7 +101,10 @@ class YRouteField(forms.MultiValueField):
         super(YRouteField, self).__init__(list_fields, widget=RouteWidget(), required=False, *args, **kwargs)
 
     def compress(self, values):
-        return ' '.join(values)
+        if values:
+            return ' '.join(values)
+        else:
+            return ['', '', '', '', '', '', '', '', '', '', '', '', '', '']
 
 
 class RouteForm(forms.ModelForm):
