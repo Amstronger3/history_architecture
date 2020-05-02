@@ -5,53 +5,32 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/route.css' %}">
     <script type="text/javascript" src="{% static '/js/jquery-3.4.1.js' %}"></script>
     <div class="submit-row">
-        <input type="button" id="remove_map_x" value="Remove map x" onclick="return false;">
-        <input type="button" id="remove_map_y" value="Remove map y" onclick="return false;">
+        <input type="button" id="remove_map_x_y" value="Remove map x y" onclick="return false;">
     </div>
     <script type="text/javascript">
         (function($) {
             $(document).ready(function() {
-                var $add_map_x = $('#add_map_x');
-                var $add_map_y = $('#add_map_y');
-                var $remove_map_x = $('#remove_map_x');
-                var $remove_map_y = $('#remove_map_y');
-                $add_map_x.click( function() {
-                    var length = $add_map_x.siblings('input:visible').length;
+                var $add_map_x_y = $('#add_map_x_y');
+                var $remove_map_x_y = $('#remove_map_x_y');
+                $add_map_x_y.click( function() {
+                    var length = $add_map_x_y.siblings('input:visible').length;
                     if (length < 14)
-                        $('#id_x_coordinates_' + length).show();
-                    else
-                        alert('Maximum number of coordinate');
-                });
-                $add_map_y.click( function() {
-                    var length = $add_map_y.siblings('input:visible').length;
-                    if (length < 14)
-                        $('#id_y_coordinates_' + length).show();
+                        $('#id_x_y_coordinates_' + length).show();
                     else
                         alert('Maximum number of coordinate');
                 });
                 for(var i = 1; i <= 14; i++) {
-                    $('#id_x_coordinates_' + i).hide();
-                    $('#id_y_coordinates_' + i).hide();
+                    $('#id_x_y_coordinates_' + i).hide();
                 }
                 for(i = 0; i <= 3; i++) {
-                    $('#id_x_coordinates_' + i).show();
-                    $('#id_y_coordinates_' + i).show();
+                    $('#id_x_y_coordinates_' + i).show();
                 }
-                $add_map_x.appendTo('.field-x_coordinates div');
-                $add_map_y.appendTo('.field-y_coordinates div');
-                $('.field-add_map_x').remove();
-                $('.field-add_map_y').remove();
-                $remove_map_x.click( function() {
-                    var length = $add_map_x.siblings('input:visible').length;
-                    if (length > 4)
-                        $('#id_x_coordinates_' + (length - 1)).val('').hide();
-                    else
-                        alert('Maximum number of coordinates is already deleted');
-                });
-                $remove_map_y.click( function() {
-                    var length = $add_map_y.siblings('input:visible').length;
+                $add_map_x_y.appendTo('.field-x_y_coordinates div');
+                $('.field-add_map_x_y').remove();
+                $remove_map_x_y.click( function() {
+                    var length = $add_map_x_y.siblings('input:visible').length;
                     if (length > 4) {
-                        $('#id_y_coordinates_' + (length - 1)).val('').hide();
+                        $('#id_x_y_coordinates_' + (length - 1)).val('').hide();
                     }
                     else
                         alert('Maximum number of coordinates is already deleted');

@@ -31,8 +31,8 @@ class Map(models.Model):
 
 class GeneralMap(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    map_x = models.CharField(max_length=200)
-    map_y = models.CharField(max_length=200)
+    map_x_y = models.CharField(max_length=200)
+    zoom = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

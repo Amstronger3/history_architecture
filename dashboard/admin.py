@@ -127,8 +127,7 @@ class GeneralMapForm(forms.ModelForm):
         model = GeneralMap
         fields = '__all__'
 
-    x_coordinates = XRouteField()
-    y_coordinates = YRouteField()
+    x_y_coordinates = XRouteField()
 
 
 @admin.register(Route)
@@ -220,43 +219,28 @@ class MapAdmin(admin.ModelAdmin):
 @admin.register(GeneralMap)
 class GeneralMapAdmin(admin.ModelAdmin):
     list_display = ('title',)
-    exclude = ('map_x', 'map_y',)
+    exclude = ('map_x_y',)
     change_form_template = "admin/dashboard/general_map_form.html"
-    readonly_fields = ('add_map_x', 'add_map_y', 'display_map_x', 'display_map_y',)
+    readonly_fields = ('add_map_x_y', 'display_map_x_y')
     form = GeneralMapForm
     model = GeneralMap
 
-    def display_map_x(self, obj):  # Button for admin to get to API
-        return obj.map_x
+    def display_map_x_y(self, obj):  # Button for admin to get to API
+        return obj.map_x_y
 
-    display_map_x.allow_tags = True
-    display_map_x.short_description = "Map x"
+    display_map_x_y.allow_tags = True
+    display_map_x_y.short_description = "Map x y"
 
-    def display_map_y(self, obj):  # Button for admin to get to API
-        return obj.map_x
-
-    display_map_y.allow_tags = True
-    display_map_y.short_description = "Map y"
-
-    def add_map_x(self, obj):  # Button for admin to get to API
+    def add_map_x_y(self, obj):  # Button for admin to get to API
         return format_html(u'<a href="#" onclick="return false;" class="button" '
-                           u'id="add_map_x">Add map x</a>')
+                           u'id="add_map_x_y">Add map x y</a>')
 
-    add_map_x.allow_tags = True
-    add_map_x.short_description = "Add map x"
-
-    def add_map_y(self, obj):  # Button for admin to get to API
-        return format_html(u'<a href="#" onclick="return false;" class="button" '
-                           u'id="add_map_y">Add map y</a>')
-
-    add_map_y.allow_tags = True
-    add_map_y.short_description = "Add map y"
+    add_map_x_y.allow_tags = True
+    add_map_x_y.short_description = "Add map x y"
 
     def save_model(self, request, obj, form, change):
-        if 'x_coordinates' in form.changed_data:
-            obj.map_x = form.cleaned_data.get('x_coordinates').strip().replace(' ', ', ')
-        if 'y_coordinates' in form.changed_data:
-            obj.map_y = form.cleaned_data.get('y_coordinates').strip().replace(' ', ', ')
+        if 'x_y_coordinates' in form.changed_data:
+            obj.map_x_y = form.cleaned_data.get('x_y_coordinates').strip().replace(' ', ', ')
         super(GeneralMapAdmin, self).save_model(request, obj, form, change)
 
 
