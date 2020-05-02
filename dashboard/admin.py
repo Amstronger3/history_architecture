@@ -61,10 +61,10 @@ class MuseumsAdmin(admin.ModelAdmin):
 
 class RouteWidget(forms.MultiWidget):
     def __init__(self, attrs=None):
-        widgets = [forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
-                   forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
-                   forms.CharField(), forms.CharField(), forms.CharField(), forms.CharField(),
-                   forms.CharField(), forms.CharField(),
+        widgets = [forms.TextInput(), forms.TextInput(), forms.TextInput(), forms.TextInput(),
+                   forms.TextInput(), forms.TextInput(), forms.TextInput(), forms.TextInput(),
+                   forms.TextInput(), forms.TextInput(), forms.TextInput(), forms.TextInput(),
+                   forms.TextInput(), forms.TextInput(),
                    ]
         super(RouteWidget, self).__init__(widgets, attrs)
 
