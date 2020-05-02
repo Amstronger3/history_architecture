@@ -19,6 +19,7 @@ class AllArticles(GenericAPIView):
         Request parameters(url):
             - section_id: int
             - layer_id: int or str if 'all' value (returns articles by all layers)
+            - sequence_filtering: boolean
         Response parameters(String):
                 - 'success' -- success
                 - 'fail' -- fail
@@ -27,6 +28,8 @@ class AllArticles(GenericAPIView):
                 - 200 - success, articles objects
                 - 400 - fail. wrong parameters, section or articles doesn`t exist, error message
         """
+
+        sequence_filtering = request.GET.get('sequence_filtering', None)
         section_id = request.GET.get('section_id', None)
         layer_id = request.GET.get('layer_id', None)
         if layer_id and section_id:
@@ -40,24 +43,28 @@ class AllArticles(GenericAPIView):
             except Layers.DoesNotExist:
                 result = {'message': 'Layer doesnt exist'}
                 return Response(result, status=status.HTTP_400_BAD_REQUEST)
-            articles = Articles.objects.filter(section=section, layers__id__in=[layer])
+            articles = Articles.objects.filter(section=section, layers__id__in=[layer]) if sequence_filtering is None else \
+                Articles.objects.filter(section=section, layers__id__in=[layer]).order_by('sequence')
         else:
             if section_id:
                 try:
                     section = Sections.objects.get(id=section_id)
-                    articles = Articles.objects.filter(section=section)
+                    articles = Articles.objects.filter(section=section) if sequence_filtering is None else \
+                        Articles.objects.filter(section=section).order_by('sequence')
                 except Sections.DoesNotExist:
                     result = {'message': 'Section doesnt exist'}
                     return Response(result, status=status.HTTP_400_BAD_REQUEST)
             elif layer_id:
                 try:
                     layer = Layers.objects.all().values_list('id', flat=True) if layer_id == 'all' else Layers.objects.get(id=layer_id)
-                    articles = Articles.objects.filter(layers__id__in=[layer])
+                    articles = Articles.objects.filter(layers__id__in=[layer]) if sequence_filtering is None else \
+                        Articles.objects.filter(layers__id__in=[layer]).order_by('sequence')
                 except Layers.DoesNotExist:
                     result = {'message': 'Layer doesnt exist'}
                     return Response(result, status=status.HTTP_400_BAD_REQUEST)
             else:
-                articles = Articles.objects.all()
+                articles = Articles.objects.all() if sequence_filtering is None else \
+                    Articles.objects.all().order_by('sequence')
         serializer = self.serializer_class(articles, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
