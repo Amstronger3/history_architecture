@@ -115,48 +115,48 @@ class LayersSerializer(serializers.ModelSerializer):
         fields = ('id', 'title',)
 
 
-class AllContentSerializer(serializers.ModelSerializer):
-
-    languages = serializers.SerializerMethodField('languages_function')
-    maps = serializers.SerializerMethodField('maps_function')
-    general_maps = serializers.SerializerMethodField('general_maps_function')
-    sections = serializers.SerializerMethodField('sections_function')
-    layers = serializers.SerializerMethodField('layers_function')
-    articles = serializers.SerializerMethodField('articles_function')
-    prices = serializers.SerializerMethodField('prices_function')
-    museums = serializers.SerializerMethodField('museums_function')
-    routes = serializers.SerializerMethodField('routes_function')
-    gallery = serializers.SerializerMethodField('gallery_function')
-
-    def languages_function(self):
-        return LanguageSerializer(Language.objects.all(), many=True).data
-
-    def maps_function(self):
-        return MapsSerializer(Map.objects.all(), many=True).data
-
-    def general_maps_function(self):
-        return GeneralMapSerializer(GeneralMap.objects.all(), many=True).data
-
-    def sections_function(self):
-        return SectionsSerializer(Sections.objects.all(), many=True).data
-
-    def layers_function(self):
-        return LayersSerializer(Layers.objects.all(), many=True).data
-
-    def articles_function(self):
-        return FullArticleSerializer(Articles.objects.all(), many=True).data
-
-    def prices_function(self):
-        return PriceSerializer(Price.objects.all(), many=True).data
-
-    def museums_function(self):
-        return FullMuseumSerializer(Museums.objects.all(), many=True).data
-
-    def routes_function(self):
-        return RouteSerializer(Route.objects.all(), many=True).data
-
-    def gallery_function(self):
-        return GallerySerializer(Gallery.objects.all(), many=True).data
+# class AllContentSerializer(serializers.ModelSerializer):
+#
+#     languages = serializers.SerializerMethodField('languages_function')
+#     maps = serializers.SerializerMethodField('maps_function')
+#     general_maps = serializers.SerializerMethodField('general_maps_function')
+#     sections = serializers.SerializerMethodField('sections_function')
+#     layers = serializers.SerializerMethodField('layers_function')
+#     articles = serializers.SerializerMethodField('articles_function')
+#     prices = serializers.SerializerMethodField('prices_function')
+#     museums = serializers.SerializerMethodField('museums_function')
+#     routes = serializers.SerializerMethodField('routes_function')
+#     gallery = serializers.SerializerMethodField('gallery_function')
+#
+#     def languages_function(self):
+#         return LanguageSerializer(Language.objects.all(), many=True).data
+#
+#     def maps_function(self):
+#         return MapsSerializer(Map.objects.all(), many=True).data
+#
+#     def general_maps_function(self):
+#         return GeneralMapSerializer(GeneralMap.objects.all(), many=True).data
+#
+#     def sections_function(self):
+#         return SectionsSerializer(Sections.objects.all(), many=True).data
+#
+#     def layers_function(self):
+#         return LayersSerializer(Layers.objects.all(), many=True).data
+#
+#     def articles_function(self):
+#         return FullArticleSerializer(Articles.objects.all(), many=True).data
+#
+#     def prices_function(self):
+#         return PriceSerializer(Price.objects.all(), many=True).data
+#
+#     def museums_function(self):
+#         return FullMuseumSerializer(Museums.objects.all(), many=True).data
+#
+#     def routes_function(self):
+#         return RouteSerializer(Route.objects.all(), many=True).data
+#
+#     def gallery_function(self):
+#         return GallerySerializer(Gallery.objects.all(), many=True).data
 
 
 

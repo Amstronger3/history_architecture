@@ -208,15 +208,6 @@ class GetMuseum(GenericAPIView):
 
 
 class AllContent(GenericAPIView):
-    serializer_class = AllContentSerializer
-
-    def get_queryset(self):
-        model = self.kwargs.get('model')
-        return model.objects.all()
-
-    def get_serializer_class(self):
-        AllContentSerializer.Meta.model = self.kwargs.get('model')
-        return AllContentSerializer
 
     def get(self, request):
         """
@@ -292,3 +283,28 @@ class AllRoutes(GenericAPIView):
         routes = Route.objects.all()
         serializer = self.serializer_class(routes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class AllContentShortened(GenericAPIView):
+
+    def get(self, request):
+        """
+        Get all shortened application content
+        ---
+        Request header(body):
+            - name: Authorization
+            - value: Token xxxxxxxxxxxxxxxxxx
+
+        Response parameters(String):
+                - 'success' -- success
+
+            Response status(int):
+                - 200 - success, all application objects
+        """
+
+        general_maps = GeneralMapSerializer(GeneralMap.objects.all(), many=True).data
+        layers = LayersSerializer(Layers.objects.all(), many=True).data
+        articles = ArticlesSerializer(Articles.objects.all(), many=True).data
+        museums = MuseumsSerializer(Museums.objects.all(), many=True).data
+        return Response({'general_maps': general_maps, 'layers': layers, 'articles': articles, 'museums': museums},
+                        status=status.HTTP_200_OK)
