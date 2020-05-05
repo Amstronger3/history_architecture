@@ -9,6 +9,13 @@ class LanguageSerializer(serializers.ModelSerializer):
         fields = ('id', 'title')
 
 
+class LayersSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Layers
+        fields = ('id', 'title',)
+
+
 class GeneralMapSerializer(serializers.ModelSerializer):
     general_map_x_y = serializers.SerializerMethodField('general_map_x_yFunc')
 
@@ -44,6 +51,7 @@ class RouteSerializer(serializers.ModelSerializer):
 class ArticlesSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField('image_function')
     coordinates = serializers.SerializerMethodField('coordinates_function')
+    layer_ids = serializers.SerializerMethodField('layer_idsFunc')
 
     def coordinates_function(self, obj):
         return MapsSerializer(obj.map).data
@@ -52,9 +60,12 @@ class ArticlesSerializer(serializers.ModelSerializer):
         image = obj.main_picture.url if obj.main_picture else None
         return image
 
+    def layer_idsFunc(self, obj):
+        return LayersSerializer(obj.layers, many=True).data
+
     class Meta:
         model = Articles
-        fields = ('id', 'title', 'image', 'brief_description', 'coordinates')
+        fields = ('id', 'title', 'image', '', 'brief_description', 'coordinates')
 
 
 class MuseumsSerializer(ArticlesSerializer):
@@ -106,13 +117,6 @@ class FullMuseumSerializer(MuseumsSerializer):
     class Meta(MuseumsSerializer.Meta):
         model = Museums
         fields = MuseumsSerializer.Meta.fields + ('website', 'tickets', 'museum_price', 'start_time', 'end_time',)
-
-
-class LayersSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Layers
-        fields = ('id', 'title',)
 
 
 # class AllContentSerializer(serializers.ModelSerializer):
