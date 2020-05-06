@@ -114,9 +114,15 @@ class FullMuseumSerializer(MuseumsSerializer):
     def museum_price_function(self, obj):
         return PriceSerializer(obj.price).data
 
+    gallery = serializers.SerializerMethodField('gallery_function')
+
+    def gallery_function(self, obj):
+        return GallerySerializer(obj.gallery, many=True).data
+
     class Meta(MuseumsSerializer.Meta):
         model = Museums
-        fields = MuseumsSerializer.Meta.fields + ('website', 'tickets', 'museum_price', 'start_time', 'end_time',)
+        fields = MuseumsSerializer.Meta.fields + ('website', 'tickets', 'museum_price', 'full_description', 'language',
+                                                  'gallery', 'start_time', 'end_time',)
 
 
 # class AllContentSerializer(serializers.ModelSerializer):
