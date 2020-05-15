@@ -65,7 +65,7 @@ class ArticlesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Articles
-        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates')
+        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates', 'sequence')
 
 
 class MuseumsSerializer(ArticlesSerializer):
