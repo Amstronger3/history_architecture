@@ -25,20 +25,6 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-"""-----django-audiofield settings-----"""
-# Frontend widget values
-# 0-Keep original, 1-Mono, 2-Stereo
-CHANNEL_TYPE_VALUE = 0
-
-# 0-Keep original, 8000-8000Hz, 16000-16000Hz, 22050-22050Hz,
-# 44100-44100Hz, 48000-48000Hz, 96000-96000Hz
-FREQ_TYPE_VALUE = 8000
-
-# 0-Keep original, 1-Convert to MP3, 2-Convert to WAV, 3-Convert to OGG
-CONVERT_TYPE_VALUE = 0
-"""-----------------------------------"""
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -62,9 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'application_settings',
-    'audiofield',
     'rest_framework',
-    'drf_yasg',
+    'drf_yasg'
 ]
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
@@ -77,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'audiofield.middleware.threadlocals.ThreadLocals',
 ]
 
 ROOT_URLCONF = 'history_architecture.urls'
@@ -110,17 +94,6 @@ WSGI_APPLICATION = 'history_architecture.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'history_architecture',
-        'USER': 'jth3kdmvnfh45k',
-        'PASSWORD': 'b75dbb876bb46567de6a7fb9d8',
-        'HOST': 'ubuntu-s-1vcpu-1gb-fra1-01',
-        'PORT': '5432',
-    }
-}
 
 
 # Password validation

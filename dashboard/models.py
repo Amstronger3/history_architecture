@@ -1,5 +1,5 @@
-from audiofield.fields import AudioField
 from django.db import models
+from .validators import validate_music_file_extension
 
 
 class Language(models.Model):
@@ -89,9 +89,7 @@ class Articles(models.Model):
     brief_description = models.TextField(null=True)
     full_description = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    audio_text = AudioField(upload_to='media/audio/', blank=True,
-                            ext_whitelist=(".mp3", ".wav", ".ogg"),
-                            help_text="Allowed type - .mp3, .wav, .ogg")
+    audio_text = models.FileField(upload_to='media/audio/', validators=[validate_music_file_extension])
 
     def __str__(self):
         return self.title
@@ -130,9 +128,7 @@ class Museums(models.Model):
     sequence = models.FloatField()
     brief_description = models.TextField(null=True)
     full_description = models.TextField(null=True)
-    audio_text = AudioField(upload_to='media/audio/', blank=True,
-                            ext_whitelist=(".mp3", ".wav", ".ogg"),
-                            help_text="Allowed type - .mp3, .wav, .ogg")
+    audio_text = models.FileField(upload_to='media/audio/', validators=[validate_music_file_extension])
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -95,9 +95,15 @@ class FullArticleSerializer(ArticlesSerializer):
     def gallery_function(self, obj):
         return GallerySerializer(obj.gallery, many=True).data
 
+    audiofile = serializers.SerializerMethodField('audiofile_function')
+
+    def audiofile_function(self, obj):
+        audiofile = obj.audio_text.url if obj.audio_text else None
+        return audiofile
+
     class Meta(ArticlesSerializer.Meta):
         model = Articles
-        fields = ArticlesSerializer.Meta.fields + ('full_description', 'language', 'gallery',)
+        fields = ArticlesSerializer.Meta.fields + ('full_description', 'language', 'gallery', 'audiofile',)
 
 
 class PriceSerializer(serializers.ModelSerializer):
@@ -119,10 +125,16 @@ class FullMuseumSerializer(MuseumsSerializer):
     def gallery_function(self, obj):
         return GallerySerializer(obj.gallery, many=True).data
 
+    audiofile = serializers.SerializerMethodField('audiofile_function')
+
+    def audiofile_function(self, obj):
+        audiofile = obj.audio_text.url if obj.audio_text else None
+        return audiofile
+
     class Meta(MuseumsSerializer.Meta):
         model = Museums
         fields = MuseumsSerializer.Meta.fields + ('website', 'tickets', 'museum_price', 'full_description', 'language',
-                                                  'gallery', 'start_time', 'end_time',)
+                                                  'gallery', 'start_time', 'end_time', 'audiofile',)
 
 
 # class AllContentSerializer(serializers.ModelSerializer):

@@ -45,7 +45,12 @@ class ArticlesAdmin(admin.ModelAdmin):
         ArticlesFilter,
     )
     list_display = ('title', 'map', 'type', 'language', 'sequence')
-    inlines = [ReservationInlineAdmin]
+    readonly_fields = ['audiofile_player',]
+
+    def audiofile_player(self, obj):
+        return format_html('<audio controls><source src="%s" type="audio/mpeg"></audio>' % obj.audio_text.url)
+    audiofile_player.allow_tags = True
+    audiofile_player.short_description = 'Audio File Player'
 
 
 @admin.register(Price)
