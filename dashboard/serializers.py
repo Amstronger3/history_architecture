@@ -52,6 +52,7 @@ class ArticlesSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField('image_function')
     coordinates = serializers.SerializerMethodField('coordinates_function')
     layer_ids = serializers.SerializerMethodField('layer_idsFunc')
+    sections = serializers.SerializerMethodField('sectionsFunc')
 
     def coordinates_function(self, obj):
         return MapsSerializer(obj.map).data
@@ -63,9 +64,12 @@ class ArticlesSerializer(serializers.ModelSerializer):
     def layer_idsFunc(self, obj):
         return LayersSerializer(obj.layers, many=True).data
 
+    def sectionsFunc(self, obj):
+        return SectionsSerializer(obj.section, many=True).data
+
     class Meta:
         model = Articles
-        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates', 'sequence')
+        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates', 'sequence', 'sections')
 
 
 class MuseumsSerializer(ArticlesSerializer):

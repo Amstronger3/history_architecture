@@ -306,5 +306,6 @@ class AllContentShortened(GenericAPIView):
         layers = LayersSerializer(Layers.objects.all(), many=True).data
         articles = ArticlesSerializer(Articles.objects.all(), many=True).data
         museums = MuseumsSerializer(Museums.objects.all(), many=True).data
-        return Response({'general_maps': general_maps, 'layers': layers, 'articles': articles, 'museums': museums},
+        sections = SectionsSerializer(Sections.objects.all(), many=True).data
+        return Response({'general_maps': general_maps, 'layers': layers, 'articles': articles, 'museums': museums, 'sections': sections},
                         status=status.HTTP_200_OK)
