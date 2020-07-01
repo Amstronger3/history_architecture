@@ -58,6 +58,11 @@ class PriceAdmin(admin.ModelAdmin):
     list_display = ('title', 'price',)
 
 
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = ('image',)
+
+
 @admin.register(Museums)
 class MuseumsAdmin(admin.ModelAdmin):
     list_display = ('title', 'map', 'type', 'language', 'website', 'start_time', 'end_time', 'tickets', 'price', 'sequence')
