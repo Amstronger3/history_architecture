@@ -156,6 +156,6 @@ class Route(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(upload_to='media/gallery/')
     brief_description = models.TextField()
-    articles = models.ForeignKey(Articles, on_delete=models.CASCADE, null=True, related_name='gallery')
-    museums = models.ForeignKey(Museums, on_delete=models.CASCADE, null=True, related_name='gallery')
+    articles = models.ForeignKey(Articles, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
+    museums = models.ForeignKey(Museums, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
 
