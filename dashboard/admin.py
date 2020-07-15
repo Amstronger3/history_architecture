@@ -60,7 +60,7 @@ class PriceAdmin(admin.ModelAdmin):
 
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'image', 'articles', 'museums')
+    list_display = ('id', 'image', 'articles', 'museums', 'sequence')
 
 
 @admin.register(Museums)

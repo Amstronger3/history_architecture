@@ -156,6 +156,7 @@ class Route(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(upload_to='media/gallery/')
     brief_description = models.TextField()
+    sequence = models.FloatField()
     articles = models.ForeignKey(Articles, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
     museums = models.ForeignKey(Museums, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
 

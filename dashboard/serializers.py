@@ -89,7 +89,7 @@ class GallerySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Gallery
-        fields = ('id', 'gallery_picture', 'brief_description',)
+        fields = ('id', 'gallery_picture', 'brief_description', 'sequence')
 
 
 class FullArticleSerializer(ArticlesSerializer):
