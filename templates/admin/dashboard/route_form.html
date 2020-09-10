@@ -17,19 +17,19 @@
                 var $remove_y_coordinate = $('#remove_y_coordinate');
                 $add_x_coordinate.click( function() {
                     var length = $add_x_coordinate.siblings('input:visible').length;
-                    if (length < 14)
+                    if (length < 100)
                         $('#id_x_coordinates_' + length).show();
                     else
                         alert('Maximum number of coordinate');
                 });
                 $add_y_coordinate.click( function() {
                     var length = $add_y_coordinate.siblings('input:visible').length;
-                    if (length < 14)
+                    if (length < 100)
                         $('#id_y_coordinates_' + length).show();
                     else
                         alert('Maximum number of coordinate');
                 });
-                for(var i = 1; i <= 14; i++) {
+                for(var i = 1; i <= 100; i++) {
                     $('#id_x_coordinates_' + i).hide();
                     $('#id_y_coordinates_' + i).hide();
                 }
