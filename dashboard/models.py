@@ -141,8 +141,8 @@ class Museums(models.Model):
 
 class Route(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    route_x = models.CharField(max_length=200)
-    route_y = models.CharField(max_length=200)
+    route_x = models.CharField(max_length=1000)
+    route_y = models.CharField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
