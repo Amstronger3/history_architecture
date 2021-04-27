@@ -82,14 +82,25 @@ class MuseumsSerializer(ArticlesSerializer):
 class GallerySerializer(serializers.ModelSerializer):
 
     gallery_picture = serializers.SerializerMethodField('gallery_picture_function')
+    three_d_panoramas_file = serializers.SerializerMethodField('three_d_panoramas_function')
+    three_d_tour_file = serializers.SerializerMethodField('three_d_tour_function')
+
 
     def gallery_picture_function(self, obj):
         image = obj.image.url if obj.image else None
         return image
 
+    def three_d_panoramas_function(self, obj):
+        three_d_panoramas = obj.three_d_panoramas.url if obj.three_d_panoramas else None
+        return three_d_panoramas
+
+    def three_d_tour_function(self, obj):
+        three_d_tour = obj.three_d_tour.url if obj.three_d_tour else None
+        return three_d_tour
+
     class Meta:
         model = Gallery
-        fields = ('id', 'gallery_picture', 'brief_description', 'sequence', 'brief_description_language')
+        fields = ('id', 'gallery_picture', 'brief_description', 'sequence', 'brief_description_language', 'three_d_panoramas_file', 'three_d_tour_file')
 
 
 class FullArticleSerializer(ArticlesSerializer):
