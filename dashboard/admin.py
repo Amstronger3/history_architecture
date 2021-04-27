@@ -61,7 +61,7 @@ class PriceAdmin(admin.ModelAdmin):
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ('id', 'image', 'articles', 'museums', 'sequence')
-    search_fields = ['articles',]
+    search_fields = ['articles__title']
 
 
 @admin.register(Museums)
