@@ -15,6 +15,7 @@ class Language(models.Model):
 
 class Map(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    title_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='map_title_language', verbose_name="Map Title Language", null=True)
     highlight_x = models.CharField(max_length=200)
     highlight_y = models.CharField(max_length=200)
     pin_x = models.CharField(max_length=200)
@@ -45,6 +46,7 @@ class GeneralMap(models.Model):
 
 class Sections(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    title_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='sections_title_language', verbose_name="Sections Title Language", null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -57,6 +59,7 @@ class Sections(models.Model):
 
 class Layers(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    title_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='layers_title_language', verbose_name="Layers Title Language", null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -79,6 +82,7 @@ ARTICLE_TYPE = (
 
 class Articles(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    title_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='article_title_language', verbose_name="Article Title Language", null=True)
     map = models.ForeignKey(Map, on_delete=models.CASCADE, null=True, related_name='articles')
     layers = models.ManyToManyField(Layers, blank=True, related_name='articles')
     section = models.ManyToManyField(Sections, blank=True, related_name='articles')
@@ -87,9 +91,12 @@ class Articles(models.Model):
     main_picture = models.ImageField(upload_to='media/main_pictures/', null=True)
     sequence = models.FloatField()
     brief_description = models.TextField(null=True)
+    brief_description_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='article_brief_description_language', verbose_name="Article Brief Description Language", null=True)
     full_description = models.TextField(null=True)
+    full_description_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='article_full_description_language', verbose_name="Article Full Description Language", null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     audio_text = models.FileField(upload_to='media/audio/', validators=[validate_music_file_extension])
+    audio_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='article_audio_language', verbose_name="Article Audio Language", null=True)
 
     def __str__(self):
         return self.title
@@ -114,6 +121,7 @@ class Price(models.Model):
 
 class Museums(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    title_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='museums_title_language', verbose_name="Museums Title Language", null=True)
     website = models.CharField(max_length=200, unique=True)
     start_time = models.TimeField()
     end_time = models.TimeField()
@@ -127,7 +135,9 @@ class Museums(models.Model):
     main_picture = models.ImageField(upload_to='media/main_pictures/', null=True)
     sequence = models.FloatField()
     brief_description = models.TextField(null=True)
+    brief_description_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='museums_brief_description_language', verbose_name="Museums Brief Description Language", null=True)
     full_description = models.TextField(null=True)
+    full_description_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='museums_full_description_language', verbose_name="Museums Full Description Language", null=True)
     audio_text = models.FileField(upload_to='media/audio/', validators=[validate_music_file_extension])
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -141,6 +151,7 @@ class Museums(models.Model):
 
 class Route(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    title_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='route_title_language', verbose_name="Route Title Language", null=True)
     route_x = models.CharField(max_length=1000)
     route_y = models.CharField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -156,6 +167,7 @@ class Route(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(upload_to='media/gallery/')
     brief_description = models.TextField()
+    brief_description_language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='galleries_brief_description_language', verbose_name="Galleries Brief Description Language", null=True)
     sequence = models.FloatField()
     articles = models.ForeignKey(Articles, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
     museums = models.ForeignKey(Museums, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
