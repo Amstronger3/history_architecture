@@ -19,12 +19,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='articles',
-            name='audio_text',
-            field=models.FileField(default=False, upload_to='media/audio/', validators=[dashboard.validators.validate_music_file_extension]),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='articles',
             name='brief_description_language',
             field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='article_brief_description_language', to='dashboard.Language', verbose_name='Article Brief Description Language'),
         ),
