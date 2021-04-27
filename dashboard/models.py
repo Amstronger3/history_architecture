@@ -171,4 +171,7 @@ class Gallery(models.Model):
     sequence = models.FloatField()
     articles = models.ForeignKey(Articles, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
     museums = models.ForeignKey(Museums, on_delete=models.CASCADE, blank=True, null=True, related_name='gallery')
+    three_d_panoramas = models.FileField(upload_to='media/gallery/')
+    three_d_tour = models.FileField(upload_to='media/gallery/')
+
 
