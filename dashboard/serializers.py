@@ -13,7 +13,7 @@ class LayersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Layers
-        fields = ('id', 'title',)
+        fields = ('id', 'title', 'title_language')
 
 
 class GeneralMapSerializer(serializers.ModelSerializer):
@@ -31,21 +31,21 @@ class SectionsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Sections
-        fields = ('id', 'title')
+        fields = ('id', 'title', 'title_language')
 
 
 class MapsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Map
-        fields = ('id', 'title', 'highlight_x', 'highlight_y', 'pin_x', 'pin_y',)
+        fields = ('id', 'title', 'highlight_x', 'highlight_y', 'pin_x', 'pin_y', 'title_language')
 
 
 class RouteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Route
-        fields = ('id', 'title', 'route_x', 'route_y')
+        fields = ('id', 'title', 'route_x', 'route_y', 'title_language')
 
 
 class ArticlesSerializer(serializers.ModelSerializer):
@@ -69,14 +69,14 @@ class ArticlesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Articles
-        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates', 'sequence', 'sections')
+        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates', 'sequence', 'sections', 'title_language', 'brief_description_language', 'full_description_language', 'audio_language')
 
 
 class MuseumsSerializer(ArticlesSerializer):
 
     class Meta(ArticlesSerializer.Meta):
         model = Museums
-        fields = ArticlesSerializer.Meta.fields
+        fields = ('id', 'title', 'image', 'layer_ids', 'brief_description', 'coordinates', 'sequence', 'sections', 'title_language', 'brief_description_language', 'full_description_language')
 
 
 class GallerySerializer(serializers.ModelSerializer):
@@ -89,7 +89,7 @@ class GallerySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Gallery
-        fields = ('id', 'gallery_picture', 'brief_description', 'sequence')
+        fields = ('id', 'gallery_picture', 'brief_description', 'sequence', 'brief_description_language')
 
 
 class FullArticleSerializer(ArticlesSerializer):
