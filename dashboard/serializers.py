@@ -91,11 +91,11 @@ class GallerySerializer(serializers.ModelSerializer):
         return image
 
     def three_d_panoramas_function(self, obj):
-        three_d_panoramas = obj.three_d_panoramas.url if obj.three_d_panoramas else None
+        three_d_panoramas = obj.three_d_panoramas.url if obj.three_d_panoramas.name != 'False' else None
         return three_d_panoramas
 
     def three_d_tour_function(self, obj):
-        three_d_tour = obj.three_d_tour.url if obj.three_d_tour else None
+        three_d_tour = obj.three_d_tour.url if obj.three_d_tour.name != 'False' else None
         return three_d_tour
 
     class Meta:
